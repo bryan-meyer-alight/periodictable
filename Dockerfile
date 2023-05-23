@@ -1,5 +1,5 @@
 # Set up the Java runtime environment.
-FROM adoptopenjdk/openjdk11:x86_64-alpine-jdk-11.0.9_11.1-slim
+FROM adoptopenjdk/openjdk11:x86_64-alpine-jdk-11.0.19_7-slim
 
 # Create an application group and add a user.
 RUN addgroup -g 1500 periodictableapp
