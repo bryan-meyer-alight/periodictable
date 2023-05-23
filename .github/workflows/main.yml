@@ -20,8 +20,12 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
-     # - name: Build the Docker Image
-     #   run: docker build . --file Dockerfile --tag periodictable:latest
+      - name: Upload the JUnit Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: JUnit Tests (Zipped)
+          path: build/reports/tests/test/
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
