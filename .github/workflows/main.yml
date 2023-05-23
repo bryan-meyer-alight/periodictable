@@ -34,4 +34,4 @@ jobs:
       - name: Build and Push Docker Image to AWS ECR
         run: |
           docker build . --file Dockerfile -t ${{ steps.login-ecr.outputs.registry }}/github-actions-demo:periodictable
-          docker push github-actions-demo:periodictable
+          docker push ${{ steps.login-ecr.outputs.registry }}/github-actions-demo:periodictable
